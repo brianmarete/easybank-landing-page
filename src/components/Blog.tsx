@@ -35,8 +35,10 @@ const Blog = () => {
   return (
     <section className="py-20 bg-very-light-gray">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-light mb-8">Latest Articles</h2>
-        <div className="flex flex-col md:flex-row my-10 gap-8">
+        <h2 className="text-center md:text-left text-3xl md:text-4xl font-light mb-8 mx-4">
+          Latest Articles
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-10 mx-4">
           {articles.map((article, index) => (
             <ArticleCard key={index} {...article} />
           ))}

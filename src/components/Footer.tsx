@@ -8,11 +8,11 @@ import InviteButton from "./Invite-Button";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-blue py-8 text-sm">
-      <div className="min-h-24 text-very-light-gray grid md:grid-cols-[repeat(3,_1fr)_auto] max-w-6xl m-auto">
-        <div className="flex flex-col justify-between">
-          <img src={LogoWhite} alt="" className="w-40" />
-          <div className="flex justify-start gap-4">
+    <footer className="bg-dark-blue py-8 px-4 text-sm">
+      <div className="min-h-24 text-very-light-gray grid md:grid-cols-[repeat(3,_1fr)_auto]  justify-center  max-w-6xl m-auto">
+        <div className="flex flex-col justify-center md:justify-between gap-4">
+          <img src={LogoWhite} alt="" className="w-40 mx-auto md:mx-0" />
+          <div className="flex justify-center md:justify-start gap-4">
             <a href="#">
               <img src={FacebookIcon} alt="" />
             </a>
@@ -30,8 +30,8 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div>
-          <ul className="space-y-4 text-light-grayish-blue">
+        <div className="my-4 md:my-0">
+          <ul className="space-y-4 text-light-grayish-blue text-center md:text-left">
             <li>
               <a href="#">About Us</a>
             </li>
@@ -44,7 +44,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <ul className="space-y-4 text-light-grayish-blue">
+          <ul className="space-y-4 text-light-grayish-blue text-center md:text-left">
             <li>
               <a href="#">Careers</a>
             </li>
@@ -56,7 +56,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col justify-between items-end">
+        <div className="flex flex-col justify-between items-center md:items-end my-4 md:my-0 gap-4">
           <InviteButton />
           <p className="text-sm text-gray-400">
             © Easybank. All Rights Reserved

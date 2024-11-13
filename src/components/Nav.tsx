@@ -41,22 +41,12 @@ const Nav = () => {
     <>
       <header
         ref={navbarRef}
-        className={`bg-white absolute top-0 left-0 right-0 z-20 transition-all duration-300 ${
-          isNavbarFixed
-            ? "fixed top-0 left-0 right-0 animate-slideDown shadow-md"
-            : ""
+        className={`bg-white fixed top-0 left-0 right-0 z-10 transition-all duration-300 ${
+          isNavbarFixed ? "animate-slideDown shadow-md" : ""
         }`}
       >
-        <div
-          className={`md:hidden flex justify-between p-8 transition-all duration-300 ${
-            isNavbarFixed
-              ? "fixed top-0 left-0 right-0 animate-slideDown shadow-md"
-              : ""
-          }`}
-        >
-          <div>
-            <img src={Logo} alt="" />
-          </div>
+        <div className="md:hidden flex justify-between p-8">
+          <img src={Logo} alt="" />
           <button onClick={toggleMenu} aria-label="Toggle menu">
             <img src={MenuIcon} alt="" />
           </button>
@@ -99,11 +89,11 @@ const Nav = () => {
         </nav>
 
         {/* DESKTOP MENU */}
-        <nav className="max-w-6xl mx-auto z-20 hidden md:flex md:justify-between md:items-center">
-          <div className="flex justify-between py-8  w-full md:max-w-fit">
+        <nav className="max-w-6xl mx-auto px-4 z-20 hidden md:flex md:justify-between md:items-center">
+          <div className="py-8">
             <img src={Logo} alt="" className="mr-8 text-2xl" />
           </div>
-          <ul className="leading-none space-x-12 capitalize text-sm text-grayish-blue">
+          <ul className="flex justify-around w-96 leading-none capitalize text-sm text-grayish-blue">
             <li className="inline">
               <a href="#" className="hover:text-soft-red">
                 Home

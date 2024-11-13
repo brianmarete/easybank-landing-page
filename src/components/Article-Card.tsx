@@ -10,7 +10,7 @@ const ArticleCard = ({
   summary: string;
 }) => {
   return (
-    <div className="grid grid-rows-2 rounded-md">
+    <div className="grid grid-rows-2 rounded-md shadow-md">
       <div className="overflow-hidden">
         <img src={image} alt="" className="h-full w-full" />
       </div>
