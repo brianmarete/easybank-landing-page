@@ -3,6 +3,7 @@ import Logo from "../assets/logo.svg";
 import MenuIcon from "../assets/icon-hamburger.svg";
 import CloseIcon from "../assets/icon-close.svg";
 import { ImFacebook2, ImTwitter } from "react-icons/im";
+import InviteButton from "./Invite-Button";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,9 +39,16 @@ const Nav = () => {
 
   return (
     <>
-      <header ref={navbarRef}>
+      <header
+        ref={navbarRef}
+        className={`bg-white absolute top-0 left-0 right-0 z-20 transition-all duration-300 ${
+          isNavbarFixed
+            ? "fixed top-0 left-0 right-0 animate-slideDown shadow-md"
+            : ""
+        }`}
+      >
         <div
-          className={`md:hidden flex justify-between bg-white p-8 transition-all duration-300 ${
+          className={`md:hidden flex justify-between p-8 transition-all duration-300 ${
             isNavbarFixed
               ? "fixed top-0 left-0 right-0 animate-slideDown shadow-md"
               : ""
@@ -91,13 +99,7 @@ const Nav = () => {
         </nav>
 
         {/* DESKTOP MENU */}
-        <nav
-          className={`bg-white xl:px-36 md:px-24 z-10 hidden md:flex md:justify-between md:items-center transition-all duration-300 ${
-            isNavbarFixed
-              ? "fixed top-0 left-0 right-0 animate-slideDown shadow-md"
-              : ""
-          }`}
-        >
+        <nav className="max-w-6xl mx-auto z-20 hidden md:flex md:justify-between md:items-center">
           <div className="flex justify-between py-8  w-full md:max-w-fit">
             <img src={Logo} alt="" className="mr-8 text-2xl" />
           </div>
@@ -128,9 +130,7 @@ const Nav = () => {
               </a>
             </li>
           </ul>
-          <button className="bg-gradient-to-r from-lime-green from-10 to-bright-cyan to-90% text-white px-8 py-3 rounded-full shadow-md hover:bg-white hover:text-soft-red ">
-            Request Invite
-          </button>
+          <InviteButton />
         </nav>
       </header>
       {/* Observer target - positioned just below the navbar */}
