@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import Logo from "../assets/logo.svg";
 import MenuIcon from "../assets/icon-hamburger.svg";
 import CloseIcon from "../assets/icon-close.svg";
-import { ImFacebook2, ImTwitter } from "react-icons/im";
 import InviteButton from "./Invite-Button";
 
 const Nav = () => {
@@ -48,44 +47,37 @@ const Nav = () => {
         <div className="md:hidden flex justify-between p-8">
           <img src={Logo} alt="" />
           <button onClick={toggleMenu} aria-label="Toggle menu">
-            <img src={MenuIcon} alt="" />
+            {isMenuOpen ? (
+              <img src={CloseIcon} alt="" />
+            ) : (
+              <img src={MenuIcon} alt="" />
+            )}
           </button>
         </div>
 
         {/* MOBILE MENU */}
         <nav
-          className={`fixed flex flex-col md:hidden top-0 left-0 bottom-0 w-full h-screen bg-very-dark-blue/[.9] transform transition-transform duration-200 ease-in-out z-10 ${
-            isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          className={`fixed flex flex-col md:hidden top-16 w-full transform transition-transform duration-200 ease-in-out z-20 ${
+            isMenuOpen ? "translate-y-0" : "-translate-y-96"
           }`}
         >
-          <div className="flex justify-between bg-transparent p-8">
-            <div>
-              <img src={Logo} alt="" className="fixed" />
-            </div>
-            <button onClick={toggleMenu} aria-label="Toggle menu">
-              <img src={CloseIcon} alt="" className="fixed right-8" />
-            </button>
-          </div>
-          <ul className="font-normal text-white uppercase px-8 mt-8">
-            <li className="text-center text-xl tracking-widest py-4 border-y border-grayish-blue">
-              <a href="#">features</a>
+          <ul className="font-normal capitalize px-8 m-8 bg-very-light-gray shadow-xl rounded-md z-10">
+            <li className="text-center text-lg py-2">
+              <a href="#">home</a>
             </li>
-            <li className="text-center text-xl tracking-widest py-4 border-b border-grayish-blue">
-              <a href="#">pricing</a>
+            <li className="text-center text-lg py-2">
+              <a href="#">about</a>
             </li>
-            <li className="text-center text-xl tracking-widest py-4 border-b border-grayish-blue">
+            <li className="text-center text-lg py-2">
               <a href="#">contact</a>
             </li>
-            <li>
-              <button className="bg-transparent border-white border-2 text-white w-full mt-4 px-8 py-3 uppercase tracking-widest text-xl rounded ">
-                Login
-              </button>
+            <li className="text-center text-lg py-2">
+              <a href="#">blog</a>
+            </li>
+            <li className="text-center text-lg py-2">
+              <a href="#">careers</a>
             </li>
           </ul>
-          <div className="mt-auto mb-8 mx-auto w-fit">
-            <ImFacebook2 className="mr-8 text-2xl text-white inline" />
-            <ImTwitter className="text-2xl text-white inline" />
-          </div>
         </nav>
 
         {/* DESKTOP MENU */}
